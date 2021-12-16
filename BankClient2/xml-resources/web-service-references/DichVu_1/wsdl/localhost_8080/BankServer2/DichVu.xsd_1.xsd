@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://bank/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://bank/">
+
+<xs:element name="CheckDangNhap" type="tns:CheckDangNhap" />
+
+<xs:element name="CheckDangNhapResponse" type="tns:CheckDangNhapResponse" />
+
+<xs:element name="ChuyenTien" type="tns:ChuyenTien" />
+
+<xs:element name="ChuyenTienResponse" type="tns:ChuyenTienResponse" />
+
+<xs:element name="Cong" type="tns:Cong" />
+
+<xs:element name="CongResponse" type="tns:CongResponse" />
+
+<xs:element name="DoiPIN" type="tns:DoiPIN" />
+
+<xs:element name="DoiPINResponse" type="tns:DoiPINResponse" />
+
+<xs:element name="LuuChuyenTien" type="tns:LuuChuyenTien" />
+
+<xs:element name="LuuChuyenTienResponse" type="tns:LuuChuyenTienResponse" />
+
+<xs:element name="LuuNhanTien" type="tns:LuuNhanTien" />
+
+<xs:element name="LuuNhanTienResponse" type="tns:LuuNhanTienResponse" />
+
+<xs:element name="LuuRutTien" type="tns:LuuRutTien" />
+
+<xs:element name="LuuRutTienResponse" type="tns:LuuRutTienResponse" />
+
+<xs:element name="RutTien" type="tns:RutTien" />
+
+<xs:element name="RutTienResponse" type="tns:RutTienResponse" />
+
+<xs:element name="SoTien" type="tns:SoTien" />
+
+<xs:element name="SoTienResponse" type="tns:SoTienResponse" />
+
+<xs:element name="TaiKhoanDen" type="tns:TaiKhoanDen" />
+
+<xs:element name="TaiKhoanDenResponse" type="tns:TaiKhoanDenResponse" />
+
+<xs:element name="XemChiTietTaiKhoan" type="tns:XemChiTietTaiKhoan" />
+
+<xs:element name="XemChiTietTaiKhoanResponse" type="tns:XemChiTietTaiKhoanResponse" />
+
+<xs:element name="getSoTaiKhoan" type="tns:getSoTaiKhoan" />
+
+<xs:element name="getSoTaiKhoanResponse" type="tns:getSoTaiKhoanResponse" />
+
+<xs:element name="getTaiKhoan" type="tns:getTaiKhoan" />
+
+<xs:element name="getTaiKhoanResponse" type="tns:getTaiKhoanResponse" />
+
+<xs:element name="hello" type="tns:hello" />
+
+<xs:element name="helloResponse" type="tns:helloResponse" />
+
+<xs:complexType name="RutTien">
+<xs:sequence>
+<xs:element name="stk" type="xs:string" minOccurs="0" />
+<xs:element name="soTienRut" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RutTienResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSoTaiKhoan">
+<xs:sequence>
+<xs:element name="stk" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSoTaiKhoanResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:taiKhoan" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="taiKhoan">
+<xs:sequence>
+<xs:element name="hoTen" type="xs:string" minOccurs="0" />
+<xs:element name="matKhau" type="xs:string" minOccurs="0" />
+<xs:element name="soTaiKhoan" type="xs:string" minOccurs="0" />
+<xs:element name="soTien" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SoTien">
+<xs:sequence>
+<xs:element name="stkTu" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SoTienResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LuuChuyenTien">
+<xs:sequence>
+<xs:element name="stkTu" type="xs:string" minOccurs="0" />
+<xs:element name="stkDen" type="xs:string" minOccurs="0" />
+<xs:element name="soTienChuyen" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LuuChuyenTienResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="XemChiTietTaiKhoan">
+<xs:sequence>
+<xs:element name="stk" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="XemChiTietTaiKhoanResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:chiTietTaiKhoan" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chiTietTaiKhoan">
+<xs:sequence>
+<xs:element name="ghiChu" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:long" />
+<xs:element name="ngayGiaoDich" type="xs:string" minOccurs="0" />
+<xs:element name="soTaiKhoan" type="xs:string" minOccurs="0" />
+<xs:element name="soTienGiaoDich" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TaiKhoanDen">
+<xs:sequence>
+<xs:element name="stkDen" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TaiKhoanDenResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:taiKhoan" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LuuRutTien">
+<xs:sequence>
+<xs:element name="stk" type="xs:string" minOccurs="0" />
+<xs:element name="soTienRut" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LuuRutTienResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LuuNhanTien">
+<xs:sequence>
+<xs:element name="stkTu" type="xs:string" minOccurs="0" />
+<xs:element name="stkDen" type="xs:string" minOccurs="0" />
+<xs:element name="soTienChuyen" type="xs:long" />
+<xs:element name="noidung" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LuuNhanTienResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Cong">
+<xs:sequence>
+<xs:element name="a" type="xs:int" />
+<xs:element name="b" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CongResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTaiKhoan">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getTaiKhoanResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:taiKhoan" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CheckDangNhap">
+<xs:sequence>
+<xs:element name="soTaiKhoan" type="xs:string" minOccurs="0" />
+<xs:element name="matKhau" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CheckDangNhapResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:taiKhoan" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DoiPIN">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0" />
+<xs:element name="mkcu" type="xs:string" minOccurs="0" />
+<xs:element name="mkmoi" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DoiPINResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ChuyenTien">
+<xs:sequence>
+<xs:element name="stkTu" type="xs:string" minOccurs="0" />
+<xs:element name="stkDen" type="xs:string" minOccurs="0" />
+<xs:element name="soTienChuyen" type="xs:long" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ChuyenTienResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
